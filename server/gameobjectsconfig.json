@@ -1,0 +1,12 @@
+{
+  "gameObjects": {
+    "base": {
+      "hp": [100]
+    },
+    "melee_unit": {
+      "hp": [100],
+      "dmg": [10],
+      "range": [1]
+    }
+  }
+}
