@@ -11,9 +11,10 @@
 #include <list>
 #include <memory>
 #include "GameObject.h"
-#include "GameSystem.h"
+#include "systems/GameSystem.h"
 #include "GameObjectFactory.h"
 #include "components/ComponentFactory.h"
+#include "Player.h"
 
 class Game
 {
@@ -25,9 +26,12 @@ public:
 private:
 	bool stop = false;
 	void update_game(sf::Time time);
+	void register_players();
 	void init_game();
 	std::vector<std::shared_ptr<GameObject>> objects;
 	std::list<std::unique_ptr<GameSystem>> systems;
+	// TODO: think about container
+	std::vector<std::shared_ptr<Player>> players;
 };
 
 

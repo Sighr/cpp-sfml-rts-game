@@ -8,8 +8,8 @@
 
 #include <SFML/Network/Packet.hpp>
 #include "GameSystem.h"
-#include "../shared/util/MultithreadQueue.h"
-#include "../shared/util/GameCommand.h"
+#include "../../shared/util/MultithreadQueue.h"
+#include "../../shared/util/GameCommand.h"
 
 class CommandReceiverSystem : public GameSystem
 {

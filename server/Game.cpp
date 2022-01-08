@@ -7,6 +7,7 @@
 
 void Game::run()
 {
+	register_players();
 	init_game();
 	sf::Clock clock;
 	while (!stop)
@@ -50,4 +51,9 @@ void Game::init_game()
 	auto unit22 = gameobject_factory.create_object("melee_unit");
 	unit22->set_initial_coordinates(-1, -1);
 	
+}
+
+void Game::register_players()
+{
+	// TODO: fill players
 }

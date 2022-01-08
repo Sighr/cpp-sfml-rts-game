@@ -8,7 +8,7 @@
 
 #include <vector>
 #include <SFML/System/Time.hpp>
-#include "GameObject.h"
+#include "../GameObject.h"
 
 class GameSystem
 {

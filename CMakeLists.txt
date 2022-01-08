@@ -13,14 +13,14 @@ add_executable(gameServer
         server/server.cpp
         server/Game.cpp
         server/GameObject.cpp
-        server/GameSystem.cpp
-        server/CommandReceiverSystem.cpp
+        server/systems/GameSystem.cpp
+        server/systems/CommandReceiverSystem.cpp
         server/components/HPComponent.cpp
         server/components/CoordinateComponent.cpp
         server/GameObjectsConfigCreator.cpp
         server/GameObjectFactory.cpp
         server/components/ComponentArgs.cpp
-        server/components/DamageComponent.cpp server/components/DamageComponent.h server/components/BelongingComponent.cpp server/components/BelongingComponent.h server/components/SizeComponent.cpp server/components/SizeComponent.h)
+        server/components/DamageComponent.cpp server/components/DamageComponent.h server/components/SizeComponent.cpp server/components/SizeComponent.h server/Player.cpp server/Player.h server/components/PlayerBelongingComponent.cpp server/components/PlayerBelongingComponent.h server/components/MoveOrder.cpp server/components/MoveOrder.h server/components/AttackOrder.cpp server/components/AttackOrder.h)
 
 target_link_libraries(gameServer sfml-network nlohmann_json::nlohmann_json)
 
