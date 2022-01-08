@@ -3,3 +3,11 @@
 //
 
 #include "AttackOrder.h"
+
+AttackOrder::AttackOrder(std::string& name, GameObjectId target)
+	:
+	CloneableBaseComponent<AttackOrder>(name),
+	target(target)
+{
+
+}

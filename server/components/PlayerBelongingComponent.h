@@ -12,8 +12,8 @@
 struct PlayerBelongingComponent : public CloneableBaseComponent<PlayerBelongingComponent>
 {
 public:
-	PlayerBelongingComponent(std::string& name, std::weak_ptr<Player> player);
-	std::weak_ptr<Player> player;
+	PlayerBelongingComponent(std::string& name, Player& player);
+	Player& player;
 };
 
 

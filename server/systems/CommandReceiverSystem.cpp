@@ -4,7 +4,7 @@
 
 #include "CommandReceiverSystem.h"
 
-void CommandReceiverSystem::update(std::vector<std::shared_ptr<GameObject>>& objects, sf::Time time)
+void CommandReceiverSystem::update(std::map<GameObjectId, GameObject>& objects, std::vector<Player>& players, sf::Time time)
 {
 
 }

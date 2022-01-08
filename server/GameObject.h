@@ -9,6 +9,7 @@
 #include <map>
 #include <memory>
 #include "components/BaseComponent.h"
+#include "../shared/util/util.h"
 
 class GameObject
 {
@@ -23,10 +24,10 @@ public:
 	void remove_component(std::string& name);
 	std::optional<std::shared_ptr<BaseComponent>> get_component_safe(std::string& name);
 	std::shared_ptr<BaseComponent> get_component_or_fail(std::string& name);
+	GameObjectId id;
 private:
 	// TODO: switch to container returning null if not found
 	std::map<std::string, std::shared_ptr<BaseComponent>> components;
-	int id;
 };
 
 

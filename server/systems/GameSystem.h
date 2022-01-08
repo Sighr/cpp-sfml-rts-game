@@ -8,12 +8,15 @@
 
 #include <vector>
 #include <SFML/System/Time.hpp>
+#include <list>
 #include "../GameObject.h"
+#include "../../shared/util/util.h"
+#include "../Player.h"
 
 class GameSystem
 {
 public:
-	virtual void update(std::vector<std::shared_ptr<GameObject>>& objects, sf::Time time) = 0;
+	virtual void update(std::map<GameObjectId, GameObject>& objects, std::vector<Player>& players, sf::Time time) = 0;
 };
 
 

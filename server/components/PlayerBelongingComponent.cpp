@@ -4,7 +4,7 @@
 
 #include "PlayerBelongingComponent.h"
 
-PlayerBelongingComponent::PlayerBelongingComponent(std::string& name, std::weak_ptr<Player> player)
+PlayerBelongingComponent::PlayerBelongingComponent(std::string& name, Player& player)
 	:
 	CloneableBaseComponent(name),
 	player(player)

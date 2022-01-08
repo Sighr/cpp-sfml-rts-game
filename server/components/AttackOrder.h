@@ -7,12 +7,12 @@
 
 #include "CloneableBaseComponent.h"
 #include "../GameObject.h"
+#include "../../shared/util/util.h"
 
 struct AttackOrder : CloneableBaseComponent<AttackOrder>
 {
-	// TODO: WIP
-//	AttackOrder(std::string& name, GameObject& target);
-//	GameObject
+	AttackOrder(std::string& name, GameObjectId target);
+	GameObjectId target;
 };
 
 

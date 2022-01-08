@@ -12,6 +12,7 @@
 #include "HPComponent.h"
 #include "CoordinateComponent.h"
 #include "DamageComponent.h"
+#include "SizeComponent.h"
 
 struct ComponentFactory
 {
@@ -19,7 +20,8 @@ struct ComponentFactory
 	const std::map<std::string, CreatorFuntionPointer> creators = {
 		{"hp", CloneableBaseComponent<HPComponent>::createComponent},
 		{"coord", CloneableBaseComponent<CoordinateComponent>::createComponent},
-		{"dmg", CloneableBaseComponent<DamageComponent>::createComponent}
+		{"dmg", CloneableBaseComponent<DamageComponent>::createComponent},
+		{"size", CloneableBaseComponent<SizeComponent>::createComponent}
 	};
 };
 

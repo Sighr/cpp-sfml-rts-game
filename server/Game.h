@@ -18,20 +18,21 @@
 
 class Game
 {
-public:
-	explicit Game(std::string& gameobject_config_path);
-	void run();
-	GameObjectFactory gameobject_factory;
-	ComponentFactory component_factory;
+	// swapped private and public to set objects initialized before gameobject_factory
 private:
 	bool stop = false;
 	void update_game(sf::Time time);
 	void register_players();
 	void init_game();
-	std::vector<std::shared_ptr<GameObject>> objects;
+	std::map<GameObjectId, GameObject> objects;
 	std::list<std::unique_ptr<GameSystem>> systems;
 	// TODO: think about container
-	std::vector<std::shared_ptr<Player>> players;
+	std::vector<Player> players;
+public:
+	explicit Game(std::string& gameobject_config_path);
+	void run();
+	GameObjectFactory gameobject_factory;
+	ComponentFactory component_factory;
 };
 
 
