@@ -54,8 +54,8 @@ std::shared_ptr<BaseComponent> GameObject::get_component_or_fail(std::string& na
 	}
 }
 
+// TODO: delete it
 void GameObject::set_initial_coordinates(float x, float y)
 {
-	static std::string name = "coord";
-	add_component(std::shared_ptr<BaseComponent>(new CoordinateComponent(name, x, y)));
+	add_component(std::shared_ptr<BaseComponent>(new CoordinateComponent(x, y)));
 }

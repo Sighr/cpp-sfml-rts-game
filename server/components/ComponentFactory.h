@@ -16,13 +16,19 @@
 
 struct ComponentFactory
 {
-	using CreatorFuntionPointer = BaseComponent*(*)(std::string, ComponentArgs&);
-	const std::map<std::string, CreatorFuntionPointer> creators = {
-		{"hp", CloneableBaseComponent<HPComponent>::createComponent},
-		{"coord", CloneableBaseComponent<CoordinateComponent>::createComponent},
-		{"dmg", CloneableBaseComponent<DamageComponent>::createComponent},
-		{"size", CloneableBaseComponent<SizeComponent>::createComponent}
+	using CreatorFuntionPointer = BaseComponent*(*)(ComponentArgs&);
+	const std::map<std::string, CreatorFuntionPointer> config_creators = {
+		{HPComponent::component_name, CloneableBaseComponent<HPComponent>::createComponent},
+		{CoordinateComponent::component_name, CloneableBaseComponent<CoordinateComponent>::createComponent},
+		{DamageComponent::component_name, CloneableBaseComponent<DamageComponent>::createComponent},
+		{SizeComponent::component_name, CloneableBaseComponent<SizeComponent>::createComponent}
 	};
+	
+	template <AnyComponent T, typename ...Args>
+	std::shared_ptr<T> create_component(Args ...args)
+	{
+		return std::make_shared<T>(args...);
+	}
 };
 
 

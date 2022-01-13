@@ -4,17 +4,17 @@
 
 #include "HPComponent.h"
 
-HPComponent::HPComponent(std::string& name, ComponentArgs& args)
+HPComponent::HPComponent(ComponentArgs& args)
 	:
-	CloneableBaseComponent(name),
+	CloneableBaseComponent(HPComponent::component_name),
 	hp(args.get_arg<int>(0))
 {
 
 }
 
-HPComponent::HPComponent(std::string& name, int hp)
+HPComponent::HPComponent(int hp)
 	:
-	CloneableBaseComponent(name),
+	CloneableBaseComponent(HPComponent::component_name),
 	hp(hp)
 {
 

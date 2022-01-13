@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.9)
 project(gameServer)
 
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 20)
 
 set(nlohmann_json_DIR ./server/json)
 find_package(nlohmann_json REQUIRED)

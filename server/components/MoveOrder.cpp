@@ -4,9 +4,9 @@
 
 #include "MoveOrder.h"
 
-MoveOrder::MoveOrder(std::string& name, float x, float y)
+MoveOrder::MoveOrder(float x, float y)
 	:
-	CloneableBaseComponent<MoveOrder>(name),
+	CloneableBaseComponent<MoveOrder>(MoveOrder::component_name),
 	target_x(x),
 	target_y(y)
 {

@@ -27,7 +27,7 @@ std::map<std::string, GameObject> GameObjectsConfigCreator::get_objects_from_con
 		for (auto& [component_name, component_args] : go_components.items())
 		{
 			auto args = ComponentArgs(component_args);
-			const auto raw_component = factory.creators.at(component_name)(component_name, args);
+			const auto raw_component = factory.config_creators.at(component_name)(args);
 			const auto component = std::shared_ptr<BaseComponent>(raw_component);
 			go.add_component(component);
 		}

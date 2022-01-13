@@ -4,9 +4,9 @@
 
 #include "PlayerBelongingComponent.h"
 
-PlayerBelongingComponent::PlayerBelongingComponent(std::string& name, Player& player)
+PlayerBelongingComponent::PlayerBelongingComponent(Player& player)
 	:
-	CloneableBaseComponent(name),
+	CloneableBaseComponent(PlayerBelongingComponent::component_name),
 	player(player)
 {
 

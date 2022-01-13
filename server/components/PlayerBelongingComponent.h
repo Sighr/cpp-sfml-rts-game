@@ -12,8 +12,9 @@
 struct PlayerBelongingComponent : public CloneableBaseComponent<PlayerBelongingComponent>
 {
 public:
-	PlayerBelongingComponent(std::string& name, Player& player);
+	explicit PlayerBelongingComponent(Player& player);
 	Player& player;
+	inline static const std::string component_name = "player";
 };
 
 

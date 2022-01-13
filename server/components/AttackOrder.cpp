@@ -4,9 +4,9 @@
 
 #include "AttackOrder.h"
 
-AttackOrder::AttackOrder(std::string& name, GameObjectId target)
+AttackOrder::AttackOrder(GameObjectId target)
 	:
-	CloneableBaseComponent<AttackOrder>(name),
+	CloneableBaseComponent<AttackOrder>(AttackOrder::component_name),
 	target(target)
 {
 

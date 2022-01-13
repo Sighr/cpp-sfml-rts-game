@@ -9,9 +9,10 @@
 
 struct DamageComponent : public CloneableBaseComponent<DamageComponent>
 {
-	DamageComponent(std::string& name, ComponentArgs& args);
-	DamageComponent(std::string& name, float dmg);
+	explicit DamageComponent(ComponentArgs& args);
+	explicit DamageComponent(float dmg);
 	float dmg;
+	inline static const std::string component_name = "dmg";
 };
 
 

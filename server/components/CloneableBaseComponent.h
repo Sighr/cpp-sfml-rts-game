@@ -11,7 +11,7 @@
 template<typename ConcreteComponent>
 class CloneableBaseComponent : public BaseComponent {
 public:
-	explicit CloneableBaseComponent(std::string& name)
+	explicit CloneableBaseComponent(const std::string& name)
 		: BaseComponent(name)
 	{
 	
@@ -22,9 +22,9 @@ public:
 		return new ConcreteComponent(static_cast<const ConcreteComponent&>(*this));
 	}
 	
-	[[nodiscard]] static BaseComponent* createComponent(std::string name, ComponentArgs& args)
+	[[nodiscard]] static BaseComponent* createComponent(ComponentArgs& args)
 	{
-		return new ConcreteComponent(name, args);
+		return new ConcreteComponent(args);
 	}
 };
 

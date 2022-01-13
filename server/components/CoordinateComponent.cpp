@@ -4,18 +4,18 @@
 
 #include "CoordinateComponent.h"
 
-CoordinateComponent::CoordinateComponent(std::string& name, ComponentArgs& args)
+CoordinateComponent::CoordinateComponent(ComponentArgs& args)
 	:
-	CloneableBaseComponent(name),
+	CloneableBaseComponent(CoordinateComponent::component_name),
 	x(args.get_arg<float>(0)),
 	y(args.get_arg<float>(1))
 {
 
 }
 
-CoordinateComponent::CoordinateComponent(std::string& name, float x, float y)
+CoordinateComponent::CoordinateComponent(float x, float y)
 	:
-	CloneableBaseComponent(name),
+	CloneableBaseComponent(CoordinateComponent::component_name),
 	x(x),
 	y(y)
 {

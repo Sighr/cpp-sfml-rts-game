@@ -6,14 +6,18 @@
 #define GAMESERVER_BASECOMPONENT_H
 
 #include <string>
+#include <utility>
 
 class BaseComponent
 {
 public:
-	explicit BaseComponent(std::string& name) : name(std::move(name)) {};
+	explicit BaseComponent(std::string name) : name(std::move(name)) {};
 	[[nodiscard]] virtual BaseComponent* clone() const = 0;
 	const std::string name;
 };
+
+template <typename T>
+concept AnyComponent = std::is_base_of_v<BaseComponent, T>;
 
 
 #endif //GAMESERVER_BASECOMPONENT_H

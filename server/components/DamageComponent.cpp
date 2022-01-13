@@ -4,17 +4,17 @@
 
 #include "DamageComponent.h"
 
-DamageComponent::DamageComponent(std::string& name, ComponentArgs& args)
+DamageComponent::DamageComponent(ComponentArgs& args)
 	:
-	CloneableBaseComponent(name),
+	CloneableBaseComponent(DamageComponent::component_name),
 	dmg(args.get_arg<float>(0))
 {
 
 }
 
-DamageComponent::DamageComponent(std::string& name, float dmg)
+DamageComponent::DamageComponent(float dmg)
 	:
-	CloneableBaseComponent(name),
+	CloneableBaseComponent(DamageComponent::component_name),
 	dmg(dmg)
 {
 

@@ -9,10 +9,11 @@
 #include "CloneableBaseComponent.h"
 struct SizeComponent : public CloneableBaseComponent<SizeComponent>
 {
-    SizeComponent(std::string& name, ComponentArgs& args);
-    SizeComponent(std::string& name, float x, float y);
+    explicit SizeComponent(ComponentArgs& args);
+    SizeComponent(float x, float y);
     float x;
     float y;
+	inline static const std::string component_name = "size";
 };
 
 

@@ -11,8 +11,9 @@
 
 struct AttackOrder : CloneableBaseComponent<AttackOrder>
 {
-	AttackOrder(std::string& name, GameObjectId target);
+	explicit AttackOrder(GameObjectId target);
 	GameObjectId target;
+	inline static const std::string component_name = "attack_order";
 };
 
 

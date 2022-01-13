@@ -11,9 +11,10 @@
 
 struct HPComponent : public CloneableBaseComponent<HPComponent>
 {
-	HPComponent(std::string& name, ComponentArgs& args);
-	HPComponent(std::string& name, int hp);
+	explicit HPComponent(ComponentArgs& args);
+	explicit HPComponent(int hp);
 	int hp;
+	inline static const std::string component_name = "hp";
 };
 
 

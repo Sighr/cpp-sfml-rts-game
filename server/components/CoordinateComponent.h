@@ -11,10 +11,11 @@
 
 struct CoordinateComponent : public CloneableBaseComponent<CoordinateComponent>
 {
-	CoordinateComponent(std::string& name, ComponentArgs& args);
-	CoordinateComponent(std::string& name, float x, float y);
+	explicit CoordinateComponent(ComponentArgs& args);
+	CoordinateComponent(float x, float y);
 	float x;
 	float y;
+	inline static const std::string component_name = "coord";
 };
 
 
