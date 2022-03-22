@@ -9,6 +9,8 @@ find_package(nlohmann_json REQUIRED)
 set(SFML_STATIC_LIBRARIES TRUE)
 find_package(SFML 2.5 COMPONENTS network graphics window audio REQUIRED)
 
+find_package(TBB REQUIRED)
+
 add_executable(gameServer
         server/server.cpp
         server/Game.cpp
@@ -29,7 +31,11 @@ add_executable(gameServer
         server/systems/MoveSystem.cpp
         )
 
-target_link_libraries(gameServer sfml-network nlohmann_json::nlohmann_json)
+target_link_libraries(gameServer
+        sfml-network
+        nlohmann_json::nlohmann_json
+        TBB::tbb
+        )
 
 add_executable(gameClient
         client/client.cpp)

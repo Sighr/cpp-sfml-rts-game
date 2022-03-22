@@ -8,8 +8,8 @@
 
 #include <SFML/Network/Packet.hpp>
 #include <list>
+#include <tbb/concurrent_queue.h>
 #include "GameSystem.h"
-#include "../../shared/util/MultithreadQueue.h"
 #include "../../shared/util/GameCommand.h"
 
 class CommandReceiverSystem : public GameSystem
@@ -18,7 +18,7 @@ public:
 	void update(std::map<GameObjectId, GameObject>& objects, std::vector<Player>& players, sf::Time time) override;
 	void receive_packet(sf::Packet& packet);
 private:
-	MultithreadQueue<GameCommand> queue;
+	tbb::concurrent_queue<GameCommand> queue;
 };
 
 

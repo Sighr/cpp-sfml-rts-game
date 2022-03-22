@@ -11,8 +11,7 @@ void CommandReceiverSystem::update(std::map<GameObjectId, GameObject>& objects, 
 
 void CommandReceiverSystem::receive_packet(sf::Packet& packet)
 {
-	// TODO: move to custom objectpool allocator
-	auto command = new GameCommand();
-	packet >> *command;
+	GameCommand command;
+	packet >> command;
 	queue.push(command);
 }
