@@ -8,9 +8,8 @@
 
 #include <SFML/Network/IpAddress.hpp>
 
-class Player
+struct Player
 {
-private:
 	sf::IpAddress ip;
 	ushort port;
 	std::string name;

@@ -9,13 +9,10 @@ find_package(nlohmann_json REQUIRED)
 set(SFML_STATIC_LIBRARIES TRUE)
 find_package(SFML 2.5 COMPONENTS network graphics window audio REQUIRED)
 
-find_package(TBB REQUIRED)
-
 add_executable(gameServer
         server/server.cpp
         server/Game.cpp
         server/GameObject.cpp
-        server/systems/GameSystem.cpp
         server/systems/CommandReceiverSystem.cpp
         server/components/HPComponent.cpp
         server/components/CoordinateComponent.cpp
@@ -34,10 +31,9 @@ add_executable(gameServer
 target_link_libraries(gameServer
         sfml-network
         nlohmann_json::nlohmann_json
-        TBB::tbb
         )
 
 add_executable(gameClient
-        client/client.cpp)
+        client/client.cpp client/Client.cpp client/Client.h)
 
 target_link_libraries(gameClient sfml-network sfml-graphics sfml-window sfml-audio)

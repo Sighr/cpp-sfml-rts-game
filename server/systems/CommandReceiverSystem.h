@@ -8,17 +8,19 @@
 
 #include <SFML/Network/Packet.hpp>
 #include <list>
-#include <tbb/concurrent_queue.h>
 #include "GameSystem.h"
 #include "../../shared/util/GameCommand.h"
 
 class CommandReceiverSystem : public GameSystem
 {
 public:
+	explicit CommandReceiverSystem(sf::UdpSocket& receiver);
 	void update(std::map<GameObjectId, GameObject>& objects, std::vector<Player>& players, sf::Time time) override;
-	void receive_packet(sf::Packet& packet);
 private:
-	tbb::concurrent_queue<GameCommand> queue;
+	void process_packet(std::map<GameObjectId, GameObject>& objects, sf::Packet& packet, Player& player);
+	sf::UdpSocket& receiver;
+	
+	constexpr static int RECEIVE_TIMEOUT_MILLISECONDS = 500;
 };
 
 
