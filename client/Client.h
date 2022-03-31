@@ -6,10 +6,16 @@
 #define GAMESERVER_CLIENT_H
 
 
+#include <memory>
+#include "screens/BaseScreen.h"
+
 class Client
 {
 public:
-	
+	void run();
+	void setScreen(std::unique_ptr<BaseScreen> new_screen);
+private:
+	std::unique_ptr<BaseScreen> current_screen;
 };
 
 

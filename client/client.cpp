@@ -3,28 +3,10 @@
 //
 
 #include <SFML/Network.hpp>
-#include <iostream>
+#include "Client.h"
 
 int main()
 {
-	sf::UdpSocket socket;
-	ushort port;
-	std::cout << "Enter port" << std::endl;
-	std::cin >> port;
-	std::cout << "Sending packets to port " << port << std::endl;
-	const sf::IpAddress& ipAddress = sf::IpAddress("127.0.0.1");
-	while (true)
-	{
-		sf::Packet packet;
-		std::string data;
-		std::cout << "Enter data " << std::endl;
-		std::cin >> data;
-		if (data == "exit")
-		{
-			break;
-		}
-		std::cout << "Sending data: " << data << std::endl;
-		packet << data;
-		socket.send(packet, ipAddress, port);
-	}
+	Client client;
+	client.run();
 }
