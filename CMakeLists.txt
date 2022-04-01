@@ -10,7 +10,7 @@ find_package(nlohmann_json REQUIRED)
 find_package(SFML 2.5 COMPONENTS network graphics window audio REQUIRED)
 
 add_executable(gameServer
-        server/server.cpp
+        server/server_main.cpp
         server/Game.cpp
         server/GameObject.cpp
         server/systems/CommandReceiverSystem.cpp
@@ -34,6 +34,6 @@ target_link_libraries(gameServer
         )
 
 add_executable(gameClient
-        client/client.cpp client/Client.cpp client/Client.h client/screens/game/GameScreen.cpp client/screens/game/GameScreen.h client/screens/BaseScreen.h client/screens/connect/ConnectScreen.cpp client/screens/connect/ConnectScreen.h client/Connection.h client/widgets/TextInput.cpp client/widgets/TextInput.h client/widgets/BaseWidget.h client/Settings.h client/widgets/Button.cpp client/widgets/Button.h)
+        client/client_main.cpp client/Client.cpp client/Client.h client/screens/game/GameScreen.cpp client/screens/game/GameScreen.h client/screens/BaseScreen.h client/screens/connect/ConnectScreen.cpp client/screens/connect/ConnectScreen.h client/Connection.h client/widgets/TextInput.cpp client/widgets/TextInput.h client/widgets/BaseWidget.h client/Settings.h client/widgets/Button.cpp client/widgets/Button.h)
 
 target_link_libraries(gameClient sfml-network sfml-graphics sfml-window sfml-audio)
